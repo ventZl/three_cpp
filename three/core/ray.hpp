@@ -150,7 +150,9 @@ public:
 
         if ( scalar < 0 ) continue;
 
-        if ( side == THREE::DoubleSide || ( side == THREE::FrontSide ? dot < 0 : dot > 0 ) ) {
+		// TODO: Here `dot` was originally referenced, but that does not make sense
+		// Check original sources to find out what was the intention behind this code
+        if ( side == THREE::DoubleSide || ( side == THREE::FrontSide ? d < 0 : d > 0 ) ) {
 
           intersectPoint.add( originCopy, directionCopy.multiplyScalar( scalar ) );
 
